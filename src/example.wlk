@@ -7,7 +7,7 @@ class Macowins{
 }
 
 class Venta{
-	var prendaVendida
+	var property prendaVendida
 	var cantidadVendida
 //donde meto la fecha??
 	
@@ -38,10 +38,12 @@ class Prenda{
 	
 
 }
+/* 
 //estan definidas las prendas pero igual no las uso!deberia sacarlas 
 class Saco inherits Prenda {}
 class Pantalon inherits Prenda {}
 class Camisa inherits Prenda {}
+*/
 
 object nuevo{
 	method promocion(precio) = 0
