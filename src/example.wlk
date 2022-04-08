@@ -1,9 +1,13 @@
 /** First Wollok example */
 class Macowins{
-	var property ventas
+	var property ventas =[]
 	
-	method ganancias(fecha)=ventas.filter({unaVenta=>unaVenta.valorCompra()})
-	//ver como enganchar la fecha
+	
+	
+	//method ventasDeUnDia(unaFecha)= ventas.filter({unaVenta=>unaVenta.fecha()== unaFecha})
+	
+
+	method ganancias(unaFecha)=if (unaFecha == ventas.fecha()){ventas.filter({unaVenta=>unaVenta.valorCompra()})} else {0}
 }
 
 class Venta{
