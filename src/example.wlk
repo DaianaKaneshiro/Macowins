@@ -7,13 +7,15 @@ class Macowins{
 }
 
 class Venta{
-	var property prendaVendida
+	var property prendas=[]
 	var cantidadVendida
 	var property fecha= new Date()
 	
-	method valorCompra()= prendaVendida.precioFinal()*cantidadVendida
+	method valorCompra()= prendas.sum({unaPrenda=>unaPrenda.precioFinal()*cantidadVendida})
+
 	
 }
+
 class Efectivo inherits Venta{
 	
 }
@@ -24,7 +26,7 @@ class Tarjeta inherits Venta{
 	override method valorCompra()= super() +self.recargo()
 	
 	
-	method recargo()= cantidadCuotas*coeficiente+0.01*prendaVendida
+	method recargo()= cantidadCuotas*coeficiente+0.01*unaPrenda
 
 }
 
