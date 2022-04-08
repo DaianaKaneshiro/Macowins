@@ -2,16 +2,16 @@
 class Macowins{
 	var property ventas
 	
-	method ganancias(fecha)=ventas.filter({unaVenta=>unaVenta.valorCompra(fecha)})
-	
+	method ganancias(fecha)=ventas.filter({unaVenta=>unaVenta.valorCompra()})
+	//ver como enganchar la fecha
 }
 
 class Venta{
 	var property prendaVendida
 	var cantidadVendida
-//donde meto la fecha??
+	var property fecha= new Date()
 	
-	method valorCompra(unaFecha)= prendaVendida.precioFinal()*cantidadVendida
+	method valorCompra()= prendaVendida.precioFinal()*cantidadVendida
 	
 }
 class Efectivo inherits Venta{
@@ -21,7 +21,7 @@ class Efectivo inherits Venta{
 class Tarjeta inherits Venta{
 	var cantidadCuotas
 	var coeficiente
-	override method valorCompra(unaFecha)= super(unaFecha) +self.recargo()
+	override method valorCompra()= super() +self.recargo()
 	
 	
 	method recargo()= cantidadCuotas*coeficiente+0.01*prendaVendida
