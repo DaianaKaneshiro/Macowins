@@ -30,7 +30,7 @@ class Tarjeta inherits Venta{
 	override method valorCompra()= super() +self.recargo()
 	
 	
-	method recargo()= cantidadCuotas*coeficiente+0.01*unaPrenda
+	method recargo()= cantidadCuotas*coeficiente+0.01*prendas
 
 }
 
